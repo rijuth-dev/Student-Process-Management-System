@@ -119,28 +119,37 @@ Student2 -> Student3 -> Student4 -> Student1
 
 ### Module 4 (`a4.c`) - LRU Page Replacement
 **Required Input:**
-When prompted, provide the number of pages, frames, and the page reference sequence.
+When prompted, provide the number of accesses, frames, and the page reference sequence as shown below:
 ```text
-20
+30
 16
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+10 2 5 7 5 6 1 9 10 12 3 13 4 15 14 19 4 2 8 11 13 20 16 7 18 6 19 10 9 12
 ```
 **Sample Output Snippet:**
 ```text
-Enter number of student registrations (page access): 20
+Enter number of student registration accesses (page access): 30
 Enter number of frames: 16
 Enter registration order (page reference sequence):
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+10 2 5 7 5 6 1 9 10 12 3 13 4 15 14 19 4 2 8 11 13 20 16 7 18 6 19 10 9 12
 
 --- LRU Page Replacement ---
 
-Page 1 → FAULT (Loaded into Frame 0 )
-Frames:    1   -    -    -    -    -    -    -    -    -    -    -    -    -    -    -  
+Page 10 → FAULT (Loaded into Frame 0 )
+Frames:   10   -    -    -    -    -    -    -    -    -    -    -    -    -    -    -  
+
+Page 2 → FAULT (Loaded into Frame 1 )
+Frames:   10    2   -    -    -    -    -    -    -    -    -    -    -    -    -    -  
 ...
-Page 17 → FAULT (Loaded into Frame 0 by replacing page 1 )
+Page 5 → HIT
+Frames:   10    2    5    7   -    -    -    -    -    -    -    -    -    -    -    -  
 ...
-Total Page Faults = 20
+Page 8 → FAULT (Loaded into Frame 3 by replacing page 7 )
+Frames:   10    2    5    8    6    1    9   12    3   13    4   15   14   19   -    -
+...
+Total Page Faults = 23
 ```
+
+---
 
 ## 👨‍💻 Author
 

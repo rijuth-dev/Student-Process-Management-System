@@ -8,7 +8,7 @@ int main() {
     int pageFaults = 0, clock = 0,replPage;
 
     // Input
-    printf("Enter number of student registrations (page access): ");
+    printf("Enter number of student registration accesses (page access): ");
     scanf("%d", &n);
 
     printf("Enter number of frames: ");
@@ -78,6 +78,6 @@ int main() {
 
 
 // required input
-// 20
+// 30
 // 16
-// 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+// 10 2 5 7 5 6 1 9 10 12 3 13 4 15 14 19 4 2 8 11 13 20 16 7 18 6 19 10 9 12
